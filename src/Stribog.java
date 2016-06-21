@@ -59,7 +59,7 @@ public abstract class Stribog extends MessageDigestSpi {
 		int r = 0;
 		for (int i = a.length - 1; i >= 0; i--) {
 			result[i] = a[i] + b[i] + r & 0xFF;
-			r = a[i] + b[i] >> 8 & 0xFF;
+			r = a[i] + b[i] + r >> 8 & 0xFF;
 		}
 		return result;
 	}
